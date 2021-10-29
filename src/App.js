@@ -1,27 +1,40 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import About from "./pages/About";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
     <Router>
       <div>
         {/* navbar */}
-        <nav>
+        <nav className="nav">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/" exact activeClassName="active">
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <NavLink to="/contact" activeClassName="active">
+                Contact
+              </NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about" activeClassName="active">
+                About
+              </NavLink>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <NavLink to="/projects" activeClassName="active">
+                Projects
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -33,11 +46,11 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/blog" component={Blog} />
+          <Route path="/projects" component={Projects} />
         </Switch>
 
         {/* Footer */}
-        <footer>MERN-Frontend</footer>
+        <footer className="footer">MERN-Frontend</footer>
       </div>
     </Router>
   );
