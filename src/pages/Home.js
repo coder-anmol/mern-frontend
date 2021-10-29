@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-
+import Photo from "../headerImage.jpeg";
 function Home() {
   const [data, setData] = useState(null);
 
@@ -16,11 +16,16 @@ function Home() {
 
   return (
     <div className="container">
-      <h1>{data !== null && data.name.toUpperCase()} PAGE</h1>
-      <article>
-        <h2>{data !== null && data.content.username.toUpperCase()}</h2>
-        <p>{data !== null && data.content.tagline}</p>
-      </article>
+      <div>
+        <img className="photo" src={Photo} alt="homeimage" />
+      </div>
+      <div>
+        <h1>{data !== null && data.name.toUpperCase()} PAGE</h1>
+        <article>
+          <h2>{data !== null && data.content.username.toUpperCase()}</h2>
+          <p>{data !== null && data.content.tagline}</p>
+        </article>
+      </div>
     </div>
   );
 }

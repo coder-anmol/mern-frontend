@@ -43,3 +43,10 @@ p {
 .active {
   color: limegreen;
 }
+
+.photo {
+  width: 800px;
+  margin-top: 2rem;
+  height: 500px;
+  object-fit: cover;
+}
