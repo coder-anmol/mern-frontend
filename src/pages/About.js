@@ -15,9 +15,11 @@ function About() {
   }, []);
 
   return (
-    <div className="container">
-      <h1>{data !== null && data.name.toUpperCase()} PAGE</h1>
-      <p>{data !== null && data.content.data}</p>
+    <div className="container mt-5">
+      <h1 className="display-1 mb-4">
+        {data !== null && data.name.toUpperCase()} PAGE
+      </h1>
+      <p className="fs-4">{data !== null && data.content.data}</p>
     </div>
   );
 }

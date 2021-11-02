@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { Badge } from "react-bootstrap";
 
 function Contact() {
   const [data, setData] = useState(null);
@@ -15,12 +16,18 @@ function Contact() {
   }, []);
 
   return (
-    <div className="container">
-      <h1>{data !== null && data.name.toUpperCase()} PAGE</h1>
+    <div className="container mt-5">
+      <h1 className="display-1">
+        {data !== null && data.name.toUpperCase()} PAGE
+      </h1>
       {data !== null && (
         <article>
-          <h2>Email</h2>
-          <p>{data && data.content.email}</p>
+          <h2 className="me-5 mt-5">
+            <Badge pill bg="dark">
+              Email
+            </Badge>
+          </h2>
+          <p className="fs-4">{data && data.content.email}</p>
         </article>
       )}
     </div>

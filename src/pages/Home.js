@@ -15,16 +15,21 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
-      <div>
-        <img className="photo" src={Photo} alt="homeimage" />
-      </div>
-      <div>
-        <h1>{data !== null && data.name.toUpperCase()} PAGE</h1>
-        <article>
-          <h2>{data !== null && data.content.username.toUpperCase()}</h2>
-          <p>{data !== null && data.content.tagline}</p>
-        </article>
+    <div className="container pt-2 pb-5 py-md-5">
+      <div className="row">
+        <div className="col-md mb-3">
+          <article>
+            <h2 className="display-1 mt-5">
+              {data !== null && data.content.username.toUpperCase()}
+            </h2>
+            <p className="display-6 mt-2 pe-5">
+              {data !== null && data.content.tagline}
+            </p>
+          </article>
+        </div>
+        <div className="col-md">
+          <img className="img-fluid" src={Photo} alt="homeimage" />
+        </div>
       </div>
     </div>
   );
